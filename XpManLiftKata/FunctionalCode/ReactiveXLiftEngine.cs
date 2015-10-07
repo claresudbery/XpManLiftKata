@@ -42,37 +42,51 @@ namespace XpMan.LiftKata.FunctionalCode
             }
 
             _moving = true;
+            bool goingUp = initialFloor < destinationFloor;
 
+            StartMoving(goingUp, initialFloor, destinationFloor);
+        }
+
+        private void StartMoving(bool goingUp, int initialFloor, int destinationFloor)
+        {
             _liftEngineSubscription = Observable.Generate
                 (
-                // Starting value is this (first part of the for statement)
+                    // Starting value is this (first part of the for statement)
                     initialFloor,
 
                     // Keep going as long as this is true (second part of the for statement)
-                    floor => initialFloor < destinationFloor
-                        ? initialFloor < destinationFloor
-                        : initialFloor > destinationFloor,
+                    currentFloor => HaventReachedDestinationYet(goingUp, currentFloor, destinationFloor),
 
                     // This tells us how to get to the next iterator (third part of the for statement)
-                    floor => initialFloor < destinationFloor
-                        ? floor + 1
-                        : floor - 1,
+                    currentFloor => NextFloor(goingUp, currentFloor),
 
                     // On each iteration, output the following result (body of the for statement)
-                    floor => floor,
+                    currentFloor => currentFloor,
 
                     // Specify the iteration time between each result
-                    floor => TimeSpan.FromMilliseconds(TimeConstants.FloorInterval),
+                    currentFloor => TimeSpan.FromMilliseconds(TimeConstants.FloorInterval),
 
                     // Specify which scheduler should be used to schedule events
                     _scheduler
                 )
                 .Subscribe
                 (
-                // This function will be executed whenever an event (ie an iteration in the above loop) is generated
-                // The input to this function will be the output from the fourth step above ("body of the for statement")
+                    // This function will be executed whenever an event (ie an iteration in the above loop) is generated
+                    // The input to this function will be the output from the fourth step above ("body of the for statement")
                     ArrivedAtFloor
                 );
+        }
+
+        private int NextFloor(bool goingUp, int currentFloor)
+        {
+            return goingUp ? currentFloor + 1 : currentFloor - 1;
+        }
+
+        private bool HaventReachedDestinationYet(bool goingUp, int currentFloor, int destinationFloor)
+        {
+            return goingUp
+                       ? currentFloor <= destinationFloor
+                       : currentFloor >= destinationFloor;
         }
 
         private void ArrivedAtFloor(int floor)
