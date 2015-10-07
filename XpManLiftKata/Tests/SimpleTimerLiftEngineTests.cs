@@ -18,7 +18,7 @@ namespace XpMan.LiftKata.Tests
         {
             // Arrange
             _floorsVisited.Clear();
-            SimpleTimerLiftEngine simpleTimerLiftEngine = new SimpleTimerLiftEngine(_timerFake);
+            var simpleTimerLiftEngine = new SimpleTimerLiftEngine(_timerFake);
             simpleTimerLiftEngine.Subscribe(this);
 
             // Act
@@ -37,7 +37,7 @@ namespace XpMan.LiftKata.Tests
         {
             // Arrange
             _floorsVisited.Clear();
-            SimpleTimerLiftEngine simpleTimerLiftEngine = new SimpleTimerLiftEngine(_timerFake);
+            var simpleTimerLiftEngine = new SimpleTimerLiftEngine(_timerFake);
             simpleTimerLiftEngine.Subscribe(this);
 
             // Act
@@ -56,7 +56,7 @@ namespace XpMan.LiftKata.Tests
         {
             // Arrange
             _floorsVisited.Clear();
-            SimpleTimerLiftEngine simpleTimerLiftEngine = new SimpleTimerLiftEngine(_timerFake);
+            var simpleTimerLiftEngine = new SimpleTimerLiftEngine(_timerFake);
             simpleTimerLiftEngine.Subscribe(this);
 
             // Act
@@ -79,7 +79,7 @@ namespace XpMan.LiftKata.Tests
         {
             // Arrange
             _floorsVisited.Clear();
-            SimpleTimerLiftEngine simpleTimerLiftEngine = new SimpleTimerLiftEngine(_timerFake);
+            var simpleTimerLiftEngine = new SimpleTimerLiftEngine(_timerFake);
             simpleTimerLiftEngine.Subscribe(this);
 
             // Act
