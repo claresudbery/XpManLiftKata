@@ -2,13 +2,13 @@ var _currentFloor = 0;
 var _destinationFloor = 0;
 var _goingUp = true;
 var _moving = false;
-var _onNext = noSubscribers;
+var _onNext = noSubscriber;
 var MillisecondsBetweenFloors = 1000;
 
 var myVar = setInterval(myTimer, MillisecondsBetweenFloors);
 
-function noSubscribers(floor) {
-    console.log("There are no subscribers yet, but we are on floor " + floor);
+function noSubscriber(floor) {
+    console.log("There is no subscriber yet, but we are on floor " + floor);
 }
 
 function Subscribe(onNext) {
