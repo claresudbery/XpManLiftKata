@@ -73,9 +73,11 @@
   <ItemGroup>
     <Compile Include="FunctionalCode\ILiftEngine.cs" />
     <Compile Include="FunctionalCode\ITimer.cs" />
+    <Compile Include="FunctionalCode\ReactiveXLiftEngine.cs" />
     <Compile Include="FunctionalCode\SimpleTimerLiftEngine.cs" />
     <Compile Include="FunctionalCode\TimeConstants.cs" />
     <Compile Include="FunctionalCode\TimerWrapper.cs" />
+    <Compile Include="Tests\ReactiveXLiftEngineTests.cs" />
     <Compile Include="Tests\SimpleTimerLiftEngineTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
