@@ -1,0 +1,38 @@
+Show and tell at end: Factor 5 mins per pair
+
+No time: Send commands to hardware, which then sends us updates - tell us when it's arrived at a floor
+
+Recommend drawing diagrams (visualisation)
+
+Starting simple
+
+we on ground, lift is at 10. we call it, someone else calls it before it gets to us.
+
+compare / contrast not realistic for 2 hours?
+
+Use it to teach a particular thing - eg defining boundaries
+
+scope needs narrowing
+
+define the mechanism, the number of floors, the number of buttons 
+- give a particular aim (a particular kind of efficiency?)
+- give a defined API for (eg) lift hardware - may or may not specify
+- stick with one lift
+examples: specific acceptance tests for them to code
+
+start: mix and match - ask who is comfortable with TDD - pair the strong with the weak
+
+give the API example in js
+
+the API example is just displayed - tell them to assume it works
+
+play it by ear - give extra steerage depending on what's happening in the room
+	take some 3x5 cards you can make notes on, to remind you what people are encountering
+	
+"Here's an interesting problem that's fun to work with" - rather than "here's what we're going to learn"
+finished by "here's room for expansion ... what if..."
+
+narrow it down as much as possible
+
+Don't talk about all the complex stuff I have done - or even show the UI? - until the END 
+	- as food for further thought.

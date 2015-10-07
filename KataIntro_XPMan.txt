@@ -1,0 +1,17 @@
+The lift kata sounds simple: “a lift responds to calls containing a source floor and direction, and delivers passengers to requested floors” (http://blog.milesburton.com/2013/03/28/elevator-kata-mind-bending-pairing-exercise/). But it doesn’t take long before you find yourself asking many questions: 
+
+* How do you model the fact that events need to happen in a particular order?
+
+* Should you start with one lift or several?
+
+* Can the lifts be independent operators, or do you need some kind of over-arching lift manager?
+
+* Can you write the tests without introducing some kind of time / scheduling element?
+
+* Should lift efficiency be measured with respect to average client wait time, or how much energy is used?
+
+* Should the lifts be the old-fashioned kind that don’t know which floor you’re visiting until you enter the lift, or should users be given control panels into which they can enter their destination floor?
+
+It can keep you busy for hours at a time, but in this exercise we will focus on just one or two key concepts. Hopefully people will be inspired to take it away with them and keep working on it - then we can all compare notes.
+
+This kata will be delivered by Clare Sudbery, who has been working on this kata sporadically for the last few weeks, and has written a blog post about it here: http://engineering.laterooms.com/making-tests-readable/

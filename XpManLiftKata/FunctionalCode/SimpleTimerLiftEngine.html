@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="liftHeader">The lift will start moving in a moment:</p>
+
+<p id="eventDetails"></p>
+<p id="actionOnNext"></p>
+    
+    <script src="SimpleTimerLiftEngine.js" ></script>
+    <script>
+        Subscribe(myOnNext);
+        Travel(5, 15);
+
+        function myOnNext(floor) {
+            document.getElementById("liftHeader").innerHTML = "The lift is now moving.";
+            document.getElementById("actionOnNext").innerHTML = "The current floor is " + floor;
+        }
+    </script>
+
+</body>
+</html>
