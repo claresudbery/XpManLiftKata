@@ -17,14 +17,15 @@ namespace XpMan.LiftKata.Tests
         {
             // Arrange
             _floorsVisited.Clear();
-            TestScheduler testScheduler = new TestScheduler();
-            ReactiveXLiftEngine reactiveXLiftEngine = new ReactiveXLiftEngine(testScheduler);
+            var testScheduler = new TestScheduler();
+            var reactiveXLiftEngine = new ReactiveXLiftEngine(testScheduler);
             reactiveXLiftEngine.Subscribe(this);
 
             // Act
             testScheduler.Schedule(
                 TimeSpan.FromMilliseconds(0),
                 () => reactiveXLiftEngine.Travel(1, 2));
+
             testScheduler.Start();
 
             // Assert
@@ -38,14 +39,15 @@ namespace XpMan.LiftKata.Tests
         {
             // Arrange
             _floorsVisited.Clear();
-            TestScheduler testScheduler = new TestScheduler();
-            ReactiveXLiftEngine reactiveXLiftEngine = new ReactiveXLiftEngine(testScheduler);
+            var testScheduler = new TestScheduler();
+            var reactiveXLiftEngine = new ReactiveXLiftEngine(testScheduler);
             reactiveXLiftEngine.Subscribe(this);
 
             // Act
             testScheduler.Schedule(
                 TimeSpan.FromMilliseconds(0),
                 () => reactiveXLiftEngine.Travel(2, 1));
+
             testScheduler.Start();
 
             // Assert
@@ -59,14 +61,15 @@ namespace XpMan.LiftKata.Tests
         {
             // Arrange
             _floorsVisited.Clear();
-            TestScheduler testScheduler = new TestScheduler();
-            ReactiveXLiftEngine reactiveXLiftEngine = new ReactiveXLiftEngine(testScheduler);
+            var testScheduler = new TestScheduler();
+            var reactiveXLiftEngine = new ReactiveXLiftEngine(testScheduler);
             reactiveXLiftEngine.Subscribe(this);
 
             // Act
             testScheduler.Schedule(
                 TimeSpan.FromMilliseconds(0),
                 () => reactiveXLiftEngine.Travel(7, 2));
+
             testScheduler.Start();
 
             // Assert
@@ -84,8 +87,8 @@ namespace XpMan.LiftKata.Tests
         {
             // Arrange
             _floorsVisited.Clear();
-            TestScheduler testScheduler = new TestScheduler();
-            ReactiveXLiftEngine reactiveXLiftEngine = new ReactiveXLiftEngine(testScheduler);
+            var testScheduler = new TestScheduler();
+            var reactiveXLiftEngine = new ReactiveXLiftEngine(testScheduler);
             reactiveXLiftEngine.Subscribe(this);
 
             // Act
