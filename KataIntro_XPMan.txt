@@ -1,4 +1,4 @@
-The lift kata sounds simple: “a lift responds to calls containing a source floor and direction, and delivers passengers to requested floors” (http://blog.milesburton.com/2013/03/28/elevator-kata-mind-bending-pairing-exercise/). But it doesn’t take long before you find yourself asking many questions: 
+﻿The lift kata sounds simple: “a lift responds to calls containing a source floor and direction, and delivers passengers to requested floors” (http://blog.milesburton.com/2013/03/28/elevator-kata-mind-bending-pairing-exercise/). But it doesn’t take long before you find yourself asking many questions: 
 
 * How do you model the fact that events need to happen in a particular order?
 
@@ -15,3 +15,29 @@ The lift kata sounds simple: “a lift responds to calls containing a source flo
 It can keep you busy for hours at a time, but in this exercise we will focus on just one or two key concepts. Hopefully people will be inspired to take it away with them and keep working on it - then we can all compare notes.
 
 This kata will be delivered by Clare Sudbery, who has been working on this kata sporadically for the last few weeks, and has written a blog post about it here: http://engineering.laterooms.com/making-tests-readable/
+
+
+Notes:
+
+The GitHub starter code is here: https://github.com/claresudbery/XpManLiftKata
+
+I've created SimpleTimerLiftEngine classes / code in C# and js
+
+In C#, there is a reactive branch available on GitHub which will give you a ReactiveX version of the lift engine class
+
+You don't have to use the starter code, but you may find you're slow getting started without it
+
+You may want to extend / refactor the SimpleTimerLiftEngine class (you don't have to)
+
+There is some sample test code and a sample Lift class in the folders (but not included in the project)
+
+THE PROBLEM:
+- You are creating a lift / elevator
+- There is only one lift
+- Your lift should respond to calls containing a source floor and direction
+- Your lift should deliver passengers to requested floors
+- Your lift will not know where its passengers are going until they enter the lift and ask for a specific floor
+- You should aim to respond to each request as quickly as possible
+- If a passenger calls the lift and specifies that they are travelling up, but then asks for a lower floor, 
+	their request will be ignored if it affects the lift's ability to respond to previous requests
+- You may implement current floor monitor - ie the lift informs observers of its current location and direction
