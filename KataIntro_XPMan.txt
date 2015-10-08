@@ -23,7 +23,7 @@ The GitHub starter code is here: https://github.com/claresudbery/XpManLiftKata
 
 I've created SimpleTimerLiftEngine classes / code in C# and js
 
-In C#, there is a reactive branch available on GitHub which will give you a ReactiveX version of the lift engine class
+In C#, there is a reactivex branch available on GitHub which will give you a ReactiveX version of the lift engine class
 
 You don't have to use the starter code, but you may find you're slow getting started without it
 
