@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using XpMan.LiftKata.FunctionalCode;
 
-namespace XpMan.LiftKata.Tests
+namespace XpMan.LiftKata.FunctionalCode
 {
     internal class Lift : ILiftEngine, IDisposable, IObserver<int>
     {
