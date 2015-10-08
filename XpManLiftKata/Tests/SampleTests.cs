@@ -27,7 +27,7 @@ namespace XpMan.LiftKata.Tests
             // Act
             theLift.Move(3);
 
-            _timerTestHelper.RaiseFakeTimerEvents(1, _timerFake);
+            _timerTestHelper.RaiseFakeTimerEvents(4, _timerFake);
 
             // Assert
             Assert.That(_floorsVisited[0], Is.EqualTo(0), "should start on ground floor");
