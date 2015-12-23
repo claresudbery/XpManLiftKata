@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Timers;
 using XpMan.LiftKata.FunctionalCode;
 using NUnit.Framework;
 using Rhino.Mocks;
@@ -12,6 +11,7 @@ namespace XpMan.LiftKata.Tests
     {
         private readonly List<int> _floorsVisited = new List<int>();
         private readonly ITimer _timerFake = MockRepository.GenerateStub<ITimer>();
+        private readonly TimerTestHelper _timerTestHelper = new TimerTestHelper();
         
         [Test]
         public void When_Lift_Moves_From_One_Floor_To_The_Next_Floor_Up_Then_Both_Floors_Will_Be_Visited_In_Order()
@@ -24,7 +24,7 @@ namespace XpMan.LiftKata.Tests
             // Act
             simpleTimerLiftEngine.Travel(1, 2);
 
-            RaiseFakeTimerEvents(2);
+            _timerTestHelper.RaiseFakeTimerEvents(2, _timerFake);
 
             // Assert
             Assert.That(_floorsVisited.Count, Is.EqualTo(2), "Expected two floor-visiting events");
@@ -43,7 +43,7 @@ namespace XpMan.LiftKata.Tests
             // Act
             simpleTimerLiftEngine.Travel(2, 1);
 
-            RaiseFakeTimerEvents(2);
+            _timerTestHelper.RaiseFakeTimerEvents(2, _timerFake);
 
             // Assert
             Assert.That(_floorsVisited.Count, Is.EqualTo(2), "Expected two floor-visiting events");
@@ -62,7 +62,7 @@ namespace XpMan.LiftKata.Tests
             // Act
             simpleTimerLiftEngine.Travel(7, 2);
 
-            RaiseFakeTimerEvents(6);
+            _timerTestHelper.RaiseFakeTimerEvents(6, _timerFake);
 
             // Assert
             Assert.That(_floorsVisited.Count, Is.EqualTo(6), "Expected six floor-visiting events");
@@ -85,11 +85,11 @@ namespace XpMan.LiftKata.Tests
             // Act
             simpleTimerLiftEngine.Travel(7, 2);
 
-            RaiseFakeTimerEvents(3);
+            _timerTestHelper.RaiseFakeTimerEvents(3, _timerFake);
 
             simpleTimerLiftEngine.Travel(1, 3);
 
-            RaiseFakeTimerEvents(3);
+            _timerTestHelper.RaiseFakeTimerEvents(3, _timerFake);
 
             // Assert
             Assert.That(_floorsVisited.Count, Is.EqualTo(6), "Expected six floor-visiting events");
@@ -101,14 +101,6 @@ namespace XpMan.LiftKata.Tests
             Assert.That(_floorsVisited[3], Is.EqualTo(1), "Expected to visit floor 1 fourth");
             Assert.That(_floorsVisited[4], Is.EqualTo(2), "Expected to visit floor 2 fifth");
             Assert.That(_floorsVisited[5], Is.EqualTo(3), "Expected to visit floor 3 sixth");
-        }
-
-        private void RaiseFakeTimerEvents(int numEvents)
-        {
-            for (int eventCount = 1; eventCount <= numEvents; eventCount++)
-            {
-                _timerFake.Raise(x => x.Elapsed += null, _timerFake, new EventArgs() as ElapsedEventArgs);
-            }
         }
 
         public void OnNext(int floorVisited)

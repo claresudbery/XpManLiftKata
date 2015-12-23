@@ -11,6 +11,13 @@ This is the problem you will be trying to solve:
 	their request will be ignored if it affects the lift's ability to respond to previous requests
 - You may implement current floor monitor - ie the lift informs observers of its current location and direction
 
+This GitHub repo:
+- I've created SimpleTimerLiftEngine classes / code in C# and js
+- In C#, there is a reactivex branch available on GitHub which will give you a ReactiveX version of the lift engine class
+- You don't have to use the starter code, but you may find you're slow getting started without it
+- You may want to extend / refactor the SimpleTimerLiftEngine class (you don't have to)
+- There is some sample test code and a sample Lift class in the folders (but not included in the project)
+
 Related links:
 
 The original concept is described here (it's worth noting that I've narrowed the scope due to the limited time available):
