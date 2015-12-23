@@ -1,0 +1,3 @@
+The sample code is probably too complex - particularly the lift engine. It just confuses people.
+
+There is definitely an argument for sacking that off altogether and allowing people to start from scratch. That worked really well at LateRooms.
