@@ -87,7 +87,7 @@ namespace XpMan.LiftKata.Tests
 
             RaiseFakeTimerEvents(3);
 
-            simpleTimerLiftEngine.Travel(3, 5);
+            simpleTimerLiftEngine.Travel(1, 3);
 
             RaiseFakeTimerEvents(3);
 
@@ -98,9 +98,9 @@ namespace XpMan.LiftKata.Tests
             Assert.That(_floorsVisited[1], Is.EqualTo(6), "Expected to visit floor 6 second");
             Assert.That(_floorsVisited[2], Is.EqualTo(5), "Expected to visit floor 5 third");
 
-            Assert.That(_floorsVisited[3], Is.EqualTo(3), "Expected to visit floor 3 fourth");
-            Assert.That(_floorsVisited[4], Is.EqualTo(4), "Expected to visit floor 4 fifth");
-            Assert.That(_floorsVisited[5], Is.EqualTo(5), "Expected to visit floor 5 sixth");
+            Assert.That(_floorsVisited[3], Is.EqualTo(1), "Expected to visit floor 1 fourth");
+            Assert.That(_floorsVisited[4], Is.EqualTo(2), "Expected to visit floor 2 fifth");
+            Assert.That(_floorsVisited[5], Is.EqualTo(3), "Expected to visit floor 3 sixth");
         }
 
         private void RaiseFakeTimerEvents(int numEvents)
