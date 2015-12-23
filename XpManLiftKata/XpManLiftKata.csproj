@@ -79,6 +79,7 @@
     <Compile Include="Tests\SimpleTimerLiftEngineTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\StartingFromScratchTests.cs" />
     <Compile Include="Tests\TimerTestHelper.cs" />
   </ItemGroup>
   <ItemGroup>
